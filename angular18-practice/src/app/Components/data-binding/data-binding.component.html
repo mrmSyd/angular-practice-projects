@@ -38,9 +38,33 @@
                         </div>
                     </div>
                 </li>
-            </ol>
+            </ol>           
         </li>
-        
+        <li>
+            <h3>Two way DB: </h3>
+            <ul>
+                <li>
+                    <h4>ngModel</h4>
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <input type="text" [(ngModel)]="empName" placeholder="Enter your name">
+                        </div>
+                        <div class="col-sm-3">
+                            <select [(ngModel)]="houseName" title="{{houseName}}"> 
+                                <option value="">-Select-</option>
+                                <option value="Godric Gryffindor">Godric Gryffindor</option>
+                                <option value="Salazar Slytherin">Salazar Slytherin</option>
+                                <option value="Rowena Ravenclaw">Rowena Ravenclaw</option>
+                                <option value="Helga Hufflepuff">Helga Hufflepuff</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>{{empName}} is in {{houseName}} house!</label>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </li>
     </ol>
     
     

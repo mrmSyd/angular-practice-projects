@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-data-binding',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './data-binding.component.html',
   styleUrl: './data-binding.component.css'
 })
@@ -11,8 +12,10 @@ export class DataBindingComponent {
 
   empName: String = "Albert";
   inputTypeText: String = "text";
-  inputPlaceHolder: String = "Enter your Name"
-  inputTextClass: String = "primary-text"
+  inputPlaceHolder: String = "Enter your Name";
+  inputTextClass: String = "primary-text";
+  houseName: String = "";
+ 
   constructor(){
     
   }
