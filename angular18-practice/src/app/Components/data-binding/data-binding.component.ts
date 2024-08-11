@@ -16,4 +16,8 @@ export class DataBindingComponent {
   constructor(){
     
   }
+
+  showPopup(){
+    alert("Yeah! You've just performed event binding.");
+  }
 }

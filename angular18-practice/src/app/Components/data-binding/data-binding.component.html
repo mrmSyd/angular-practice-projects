@@ -5,8 +5,8 @@
             <h3>One Way DB:</h3>
             <ol>
                 <li>
-                    <div class="col-sm-12">
-                        <h4>Interpolation: </h4>
+                    <h4>Interpolation: </h4>
+                    <div class="col-sm-12">                        
                         <div class="col-sm-3">Employee Name: {{empName}}</div>
                         <div class="col-sm-3">
                             This is hard coded value: <input type="text" value="Harry" placeholder="Enter your Name">        
@@ -17,13 +17,24 @@
                     </div>
                 </li>
                 <li>
-                    <div class="col-sm-12">
-                        <h4>Property Binding: </h4>
+                    <h4>Property Binding: </h4>
+                    <div class="col-sm-12">                        
                         <div class="col-sm-3">
                             <p [class]="inputTextClass">Text color is set using property binding</p>
                         </div>
                         <div class="col-sm-3">
                             <input [type]="inputTypeText" [value]="empName" [class]="inputTextClass" placeholder="Enter your Name">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <h4>Ebent Binding: </h4>
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                             <button class="btn btn-primary" (click)="showPopup();">Click me</button>
+                        </div>
+                        <div class="col-sm-3">
+ 
                         </div>
                     </div>
                 </li>
