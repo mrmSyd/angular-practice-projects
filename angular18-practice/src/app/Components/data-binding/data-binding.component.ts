@@ -20,4 +20,8 @@ export class DataBindingComponent {
   showPopup(alertMsg: String){
     alert(alertMsg);
   }
+
+  changeEmployeeName(){
+    this.empName = "Minerva";
+  }
 }
