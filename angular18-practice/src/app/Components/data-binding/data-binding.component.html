@@ -1,0 +1,35 @@
+<h2>Hello from Data Binding Component!</h2>
+<div class="container">
+    <ol>
+        <li>
+            <h3>One Way DB:</h3>
+            <ol>
+                <li>
+                    <div class="col-sm-12">
+                        <h4>Interpolation: </h4>
+                        <div class="col-sm-3">Employee Name: {{empName}}</div>
+                        <div class="col-sm-3">
+                            This is hard coded value: <input type="text" value="Harry" placeholder="Enter your Name">        
+                        </div>
+                        <div class="col-sm-3">
+                            This is using Interpolation<input type="{{inputTypeText}}" value="{{empName}}" class="{{inputTextClass}}" placeholder="{{inputPlaceHolder}}">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col-sm-12">
+                        <h4>Property Binding: </h4>
+                        <div class="col-sm-3">
+                            <p [class]="inputTextClass">Text color is set using property binding</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </li>
+        
+    </ol>
+    
+    
+   
+    
+</div>
