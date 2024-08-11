@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,12 +10,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class DataBindingComponent {
 
-  empName: String = "Albert";
-  inputTypeText: String = "text";
-  inputPlaceHolder: String = "Enter your Name";
-  inputTextClass: String = "primary-text";
-  houseName: String = "";
- 
+  empName: string = "Albert";
+  inputTypeText: string = "text";
+  inputPlaceHolder: string = "Enter your Name";
+  inputTextClass: string = "primary-text";
+  houseName: string = "";
+  signalName = signal("Hermione");
   constructor(){
     
   }
@@ -26,5 +26,9 @@ export class DataBindingComponent {
 
   changeEmployeeName(){
     this.empName = "Minerva";
+  }
+
+  changeSignalName(){
+    this.signalName.set(this.empName);
   }
 }
