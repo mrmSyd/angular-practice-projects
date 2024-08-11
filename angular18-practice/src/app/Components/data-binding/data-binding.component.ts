@@ -17,7 +17,7 @@ export class DataBindingComponent {
     
   }
 
-  showPopup(){
-    alert("Yeah! You've just performed event binding.");
+  showPopup(alertMsg: String){
+    alert(alertMsg);
   }
 }
