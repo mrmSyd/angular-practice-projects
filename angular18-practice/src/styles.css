@@ -5,3 +5,15 @@ h2{
 h4{
     text-decoration: underline;
 }
+.p-4 {
+    padding: 40px;
+}
+.mr-2 {
+    margin-right: 5px;
+}
+.mt-3 {
+    margin-top: 10px;
+}
+.ml-3{
+    margin-left: 10px;
+}

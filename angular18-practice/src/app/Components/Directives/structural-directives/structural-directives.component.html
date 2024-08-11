@@ -1,0 +1,45 @@
+<div>
+    <h1>Structural Directives!</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div *ngIf="isHarryPresent" class="bg-primary p-4 text-center">
+                    <h3>Hello Harry!</h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div *ngIf="isRonaldPresent" class="bg-warning p-4 text-center">
+                    <h3>Hello Ronald!</h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div *ngIf="hermioneDoing==hermioneLikes" class="bg-danger p-4 text-center">
+                    <h3>Hello Hermione!</h3>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div *ngIf="isDracoAlive" class="bg-success p-4 text-center">
+                    <h3>Hello Draco!</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-3 text-center">
+                 <button class="btn btn-danger mr-2" (click)="hideHarry();">Hide</button>
+                 <button class="btn btn-success mr-2" (click)="showHarry();">Show</button>
+            </div>
+            <div class="col-sm-3 text-center">  
+                <button class="btn btn-secondary mr-2" (click)="toggleRonald();">{{isRonaldPresent ? 'Hide' : 'Show'}}</button>
+            </div>
+            <div class="col-sm-3 text-center">
+                 <input type="text" [(ngModel)]="hermioneDoing" placeholder="What is Hermione doing?">
+                 <input type="text" [(ngModel)]="hermioneLikes" placeholder="What Hermione loves to do?">
+            </div>
+            <div class="col-sm-3 text-center">
+                <input type="checkbox" name="isDracoAlive" id="isDracoAlive" [(ngModel)]="isDracoAlive">
+                <label for="isDracoAlive" class="ml-3">Is Draco Alive?</label>
+            </div>
+        </div>
+    </div>
+</div>
