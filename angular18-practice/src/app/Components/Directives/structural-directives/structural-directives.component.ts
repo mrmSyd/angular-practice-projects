@@ -16,6 +16,15 @@ export class StructuralDirectivesComponent {
   hermioneDoing: string = "";
   hermioneLikes: string = "";
   isDracoAlive: boolean = true;
+  houseList: string [] = ['Godric Gryffindor', 'Salazar Slytherin', 'Rowena Ravenclaw', 'Helga Hufflepuff'];
+  studentList: any[] = [
+    { name: 'Harry Potter', house: 'Godric Gryffindor', isCaptain: false },
+    { name: 'Ronald Weasley', house: 'Godric Gryffindor', isCaptain: false },
+    { name: 'Hermione Granger', house: 'Godric Gryffindor', isCaptain: false },
+    { name: 'Draco Malfoy', house: 'Salazar Slytherin', isCaptain: true },
+    { name: 'Luna Lovegood', house: 'Rowena Ravenclaw', isCaptain: false },
+    { name: 'Cedric Diggory', house: 'Helga Hufflepuff', isCaptain: true },
+  ]
 
   showHarry(){
     this.isHarryPresent = true;

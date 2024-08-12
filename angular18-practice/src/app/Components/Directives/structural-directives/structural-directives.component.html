@@ -41,5 +41,59 @@
                 <label for="isDracoAlive" class="ml-3">Is Draco Alive?</label>
             </div>
         </div>
+        <div class="row mt-3">
+            <div class="col-sm-3">
+                <label for="houseList">*ngFor in list</label>
+                <ul>
+                    <li *ngFor="let item of houseList;">{{item}}</li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <p>*ngFor in div</p>
+                <div *ngFor="let data of houseList;">
+                    {{data}}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <label for="houseDdl">*ngFor in dropdown</label>
+                <select name="houseDdl" id="houseDdl">
+                    <option *ngFor="let house of houseList;" [value]="house">
+                        {{house}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <label for="houseDdl">*ngFor in dropdown - Object</label>
+                <select name="houseDdl" id="houseDdl">
+                    <option *ngFor="let student of studentList;" [value]="student.house">
+                        {{student.name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Name</th>
+                        <th>House</th>
+                        <th>Captain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of studentList; let index=index;">
+                        <td>{{index + 1}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.house}}</td>
+                        <!-- <td>{{data.isCaptain ? 'Yes' : 'No'}}</td> -->
+                        <td>
+                            <span *ngIf="data.isCaptain">Yes</span>
+                            <span *ngIf="!data.isCaptain">No</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
