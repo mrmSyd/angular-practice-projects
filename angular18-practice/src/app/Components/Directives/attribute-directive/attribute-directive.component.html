@@ -1,0 +1,25 @@
+<div>
+    <h1>Attribute Directives</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div [ngClass]="bgHouseColor" class="p-4">
+                    Hello, Class!
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div [ngClass]="isGreenHouse ? 'bg-success' : 'bg-primary'" class="p-4">
+                    Hello, There!
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <button class="btn btn-success mt-3" (click)="changeHouse();">Green House</button>
+            </div>
+            <div class="col-sm-3">
+                <button class="btn btn-primary mt-3" (click)="changeBgColor();">Conditional Change</button>
+            </div>
+        </div>
+    </div>
+</div>
