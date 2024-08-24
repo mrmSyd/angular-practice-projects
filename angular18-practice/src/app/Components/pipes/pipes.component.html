@@ -1,0 +1,62 @@
+<div class="container">
+    <h1>Pipes & Custom Pipes in Angular</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Original value</th>
+                <th>Piped value</th>
+            </tr>
+            <tr>
+                <td>{{useUpperLowerCase}}</td>
+                <td>{{useUpperLowerCase | uppercase}}</td>
+            </tr>
+            <tr>
+                <td>{{useUpperLowerCase}}</td>
+                <td>{{useUpperLowerCase | lowercase}}</td>
+            </tr>
+            <tr>
+                <td>{{titleCasePipe}}</td>
+                <td>{{titleCasePipe | titlecase}}</td>
+            </tr>
+            <tr>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date}}</td>
+            </tr>
+            <tr>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date: 'dd MM yyyy hh:mm:ss a'}}</td>
+            </tr>          
+            <tr>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date: 'dd MMM yyyy hh:mm:ss a'}}</td>
+            </tr>
+            <tr>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date: 'dd-MM-yyyy hh:mm'}}</td>
+            </tr>
+            <tr>
+                <td>{{currentDate}}</td>
+                <td>{{currentDate | date: 'yyyy/MM/dd'}}</td>
+            </tr>
+            <tr>
+                <td>{{harrysDetail}}</td>
+                <td>{{harrysDetail | json}}</td>
+            </tr>
+            <tr>
+                <td>{{currentTime}}</td>
+                <td>{{currentTime | async}}</td>
+            </tr>
+            <tr>
+                <td>{{currentTime}}</td>
+                <td>{{currentTime | async | date: 'dd MMM yyyy hh:mm:ss a'}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="name">Shows the input value else 'NA' if none</label>
+                    <input type="text" name="name" [(ngModel)]="name" placeholder="Enter Name" autocomplete="off">
+                </td>
+                <td>{{name | na}}</td>
+            </tr>
+        </thead>
+    </table>
+</div>
