@@ -1,6 +1,7 @@
 <div>
     <h1>Attribute Directives</h1>
     <div class="container">
+        <h2>[ngClass]</h2>
         <div class="row">
             <div class="col-sm-3">
                 <div [ngClass]="bgHouseColor" class="p-4">
@@ -19,6 +20,44 @@
             </div>
             <div class="col-sm-3">
                 <button class="btn btn-primary mt-3" (click)="changeBgColor();">Conditional Change</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>[ngStyle]</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Name</th>
+                    <th>House</th>
+                    <th>Captain</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of studentList; let index=index;">
+                    <td>{{index + 1}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.house}}</td>
+                    <!-- <td>{{data.isCaptain ? 'Yes' : 'No'}}</td> -->
+                    <td [ngStyle]="{'background-color' : data.isCaptain ? 'yellow' : '' }">
+                        <span *ngIf="data.isCaptain">Yes</span>
+                        <span *ngIf="!data.isCaptain">No</span>
+                    </td>
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width': data.marks + '%'}">{{data.marks}}</div>
+                        </div>  
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row">
+            <h2>Custom Style</h2>
+            <div [ngStyle]="customStyle">
+                Hello, World
             </div>
         </div>
     </div>
