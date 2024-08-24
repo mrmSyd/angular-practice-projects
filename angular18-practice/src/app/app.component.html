@@ -1,6 +1,16 @@
 <h1>Hello World from App Component</h1>
-<!-- <app-add-employee></app-add-employee>
-<app-employee-list></app-employee-list>
-<app-data-binding></app-data-binding> -->
-<app-structural-directives></app-structural-directives>
-<app-attribute-directive></app-attribute-directive>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Home</a>
+      </div>
+      <ul class="nav navbar-nav">         
+        <li><a routerLink="emp-list">Employee List</a></li>
+        <li><a routerLink="data-binding">Data Binding</a></li>
+        <li><a [routerLink]="['/attribute-directive']">Attirbute Directive</a></li>
+        <li><a routerLink="structural-directive">Structural Directive</a></li>
+      </ul>
+    </div>
+</nav>
+ 
+<router-outlet></router-outlet>

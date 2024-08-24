@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class EmployeeListComponent {
 
+  constructor(private router: Router){}
+
+  goToAddEmp(){
+    this.router.navigateByUrl('add-emp');
+  }
 }
