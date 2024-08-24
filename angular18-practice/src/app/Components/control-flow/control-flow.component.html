@@ -1,0 +1,173 @@
+<div>
+    <h1>Control Flow Statements!</h1>
+
+    <div class="container">
+        <h2>if, else if, else</h2>
+        <div class="row">           
+            <div class="col-sm-3">  
+                @if(isHarryPresent){              
+                    <div  class="bg-primary p-4 text-center">
+                        <h3>Hello Harry!</h3>
+                    </div>            
+                }    
+            </div>                       
+            <div class="col-sm-3">
+                @if(isRonaldPresent){
+                    <div class="bg-warning p-4 text-center">
+                        <h3>Hello Ronald!</h3>
+                    </div>
+                }
+            </div>
+            
+            <div class="col-sm-3">
+                @if(hermioneDoing==hermioneLikes){
+                    <div class="bg-danger p-4 text-center">
+                        <h3>Hello Hermione!</h3>
+                    </div>
+                } @else {
+                    <div class="bg-danger p-4 text-center">
+                        <h3>Hello!</h3>
+                    </div>
+                }                
+            </div>
+            <div class="col-sm-3">
+                @if(isDracoAlive){
+                    <div class="bg-success p-4 text-center">
+                        <h3>Thank God!</h3>
+                    </div>
+                } @else if0(!isDracoAlive){
+                    <div class="bg-success p-4 text-center">
+                        <h3>Oh My God!</h3>
+                    </div>
+                }               
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm-3 text-center">
+                 <button class="btn btn-danger mr-2" (click)="hideHarry();">Hide</button>
+                 <button class="btn btn-success mr-2" (click)="showHarry();">Show</button>
+            </div>
+            <div class="col-sm-3 text-center">  
+                <button class="btn btn-secondary mr-2" (click)="toggleRonald();">{{isRonaldPresent ? 'Hide' : 'Show'}}</button>
+            </div>
+            <div class="col-sm-3 text-center">
+                 <input type="text" [(ngModel)]="hermioneDoing" placeholder="What is Hermione doing?">
+                 <input type="text" [(ngModel)]="hermioneLikes" placeholder="What Hermione loves to do?">
+            </div>
+            <div class="col-sm-3 text-center">
+                <input type="checkbox" name="isDracoAlive" id="isDracoAlive" [(ngModel)]="isDracoAlive">
+                <label for="isDracoAlive" class="ml-3">Is Draco Alive?</label>
+            </div>
+        </div>
+        <div class="row mt-3">    
+            <h2>For</h2>        
+            <div class="col-sm-3">
+                <label for="houseList">for in list</label>
+                <ul>
+                    @for (item of houseList; track $index) {
+                        <li>{{item}}</li>
+                    }
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <p>for in div</p>
+                @for(item of houseList; track $index){
+                    <div>{{item}}</div>
+                } 
+            </div>
+            <div class="col-sm-3">
+                <label for="houseDdl">for in dropdown</label>
+                <select name="houseDdl" id="houseDdl">
+                    @for(house of houseList; track $index){
+                        <option [value]="house">
+                            {{house}}
+                        </option>
+                    }                    
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <label for="houseDdl">for in dropdown - Object</label>
+                <select name="houseDdl" id="houseDdl">
+                    <option value="">Select</option>
+                    @for(student of studentList; track $index){
+                        <option [value]="student.house">
+                            {{student.name}}
+                        </option>
+                    }                    
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr. No.</th>
+                        <th>Name</th>
+                        <th>House</th>
+                        <th>Captain</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(data of studentList; track $index){
+                        <tr>
+                            <td>{{$index + 1}}</td>
+                            <td>{{data.name}}</td>
+                            <td>{{data.house}}</td>
+                            <td>
+                                @if(data.isCaptain){
+                                    <span>Yes</span>
+                                } @else {
+                                    <span>No</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="container mb-3">
+        <h2>Switch Case</h2>
+
+        <div class="row mt-3 mb-3">
+            <div class="col-sm-3">
+                <label for="houseNameDdl">for in dropdown - Object</label>
+                <select name="houseNameDdl" id="houseNameDdl" [(ngModel)]="houseNameDdl">
+                    <option value="">Select</option>
+                    @for(student of studentList; track $index){
+                        <option [value]="student.name">
+                            {{student.name}}
+                        </option>
+                    }                    
+                </select>
+            </div>
+            <div class="col-sm-6">
+                @switch(houseNameDdl){
+                    @case('Harry Potter'){
+                        <span> <em>{{houseNameDdl}}</em> is in <strong>Godric Gryffindor</strong></span>
+                    }
+                    @case('Ronald Weasley'){
+                        <span> <em>{{houseNameDdl}}</em> is in <strong>Godric Gryffindor</strong></span>
+                    }
+                    @case('Hermione Granger'){
+                        <span> <em>{{houseNameDdl}}</em> is in <strong>Godric Gryffindor</strong></span>
+                    }
+                    @case('Draco Malfoy'){
+                        <span> <em>{{houseNameDdl}}</em> is in <strong>Salazar Slytherin</strong></span>
+                    }
+                    @case('Luna Lovegood'){
+                        <span> <em>{{houseNameDdl}}</em> is in <strong>Rowena Ravenclaw</strong></span>
+                    }
+                    @case('Cedric Diggory'){
+                        <span> <em>{{houseNameDdl}}</em> is in <strong>Helga Hufflepuff</strong></span>
+                    }
+                    @default {
+                        <span> <em>No student selected</em></span>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

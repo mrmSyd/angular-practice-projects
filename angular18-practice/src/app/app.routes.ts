@@ -4,6 +4,7 @@ import { StructuralDirectivesComponent } from './Components/Directives/structura
 import { DataBindingComponent } from './Components/data-binding/data-binding.component';
 import { EmployeeListComponent } from './Components/employee-list/employee-list.component';
 import { AddEmployeeComponent } from './Components/add-employee/add-employee.component';
+import { ControlFlowComponent } from './Components/control-flow/control-flow.component';
 
 export const routes: Routes = [
     {
@@ -25,5 +26,9 @@ export const routes: Routes = [
     {
         path: 'add-emp',
         component: AddEmployeeComponent
+    },
+    {
+        path: 'control-flow',
+        component: ControlFlowComponent
     }
 ];
